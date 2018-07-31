@@ -4,13 +4,25 @@ import json
 from textblob import TextBlob
 import matplotlib.pyplot as plt
 
-#Get the JSON data
-tweetFile = open("TwitterData/tweets_small.json", "r")
+#Get the JSON data #path to our file
+tweetFile = open("./tweets.json", "r")
 tweetData = json.load(tweetFile)
 tweetFile.close()
 
-# Continue your program below!
 
-# Textblob sample:
-tb = TextBlob("You are a brilliant computer scientist.")
+for tweet in tweetData:
+    #print(tweet["text"])
+    blob = TextBlob(tweet["text"])
+    print(blob.polarity)
+
+
+
+
+
+
+
+
+
+
+tb = TextBlob("")
 print(tb.polarity)
